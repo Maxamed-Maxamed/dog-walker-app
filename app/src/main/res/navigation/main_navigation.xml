@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/report_listFragment">
+<!--    app:startDestination="@id/adoptionHomeFragment"-->
+<!--    <fragment-->
+<!--        android:id="@+id/adoptionHomeFragment"-->
+<!--        android:name="org.wit.dogadoptioncentre.fragment.AdoptionHomeFragment"-->
+<!--        android:label="fragment_adoption_home"-->
+<!--        tools:layout="@layout/fragment_adoption_home" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_adoptionHomeFragment_to_report_listFragment2"-->
+<!--            app:destination="@id/report_listFragment"-->
+<!--            app:enterAnim="@anim/nav_default_enter_anim" />-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/adoptionHomeFragment"
+        android:name="org.wit.dogadoptioncentre.fragment.AdoptionHomeFragment"
+        android:label="@string/action_adoption_home"
+        tools:layout="@layout/fragment_adoption_home" >
+        <action
+            android:id="@+id/action_adoptionHomeFragment_to_report_listFragment2"
+            app:destination="@id/report_listFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/report_listFragment"
+        android:name="org.wit.dogadoptioncentre.fragment.Report_listFragment"
+        android:label="@string/action_adoption_report"
+        tools:layout="@layout/fragment_report_list" >
+        <action
+            android:id="@+id/action_report_listFragment_to_adoptionHomeFragment"
+            app:destination="@id/adoptionHomeFragment"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_report_listFragment_to_adoptionDetailFragment"
+            app:destination="@id/adoptionDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="org.wit.dogadoptioncentre.fragment.AboutUsFragment"
+        android:label="@string/action_about"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/adoptionDetailFragment"
+        android:name="org.wit.dogadoptioncentre.AdoptionDetailFragment"
+        android:label="adoption detail"
+        tools:layout="@layout/adoption_detail_fragment" >
+
+        <action
+            android:id="@+id/action_adoptionDetailFragment_to_report_listFragment"
+            app:destination="@id/report_listFragment" />
+
+        <argument
+            android:name="adoptionid"
+            app:argType="long" />
+    </fragment>
+
+
+</navigation>

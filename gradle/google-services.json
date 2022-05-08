@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "205939844236",
+    "firebase_url": "https://dogadoption-1cdc3-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "dogadoption-1cdc3",
+    "storage_bucket": "dogadoption-1cdc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205939844236:android:564e57af4f5dc3c40407a9",
+        "android_client_info": {
+          "package_name": "org.wit.dogadoptioncentre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205939844236-1og599ejlf4b0sn37qtufum0111rjdgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBy9N1TPP1iSuk1dqVmkOU3lFvgVI4D0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205939844236-1og599ejlf4b0sn37qtufum0111rjdgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

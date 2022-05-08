@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/drawable/ic_delete_.xml" value="0.1595" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/layout/fragment_adoption_home.xml" value="0.2484375" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/layout/fragment_report_list.xml" value="0.2484375" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/layout/home_page.xml" value="0.2484375" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/layout/loading.xml" value="0.2484375" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/layout/viewcard_adoption.xml" value="0.2484375" />
+        <entry key="..\:/Users/slluser/Desktop/DogAdoptionCentre/firebaseV2.0/app/src/main/res/menu/nav_drawer_menu.xml" value="0.2484375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

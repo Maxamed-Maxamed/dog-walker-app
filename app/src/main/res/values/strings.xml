@@ -1,0 +1,87 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">DogAdoptionCentre</string>
+
+    <string name="titleOfBox">Welcome to Dog Adoption Centre</string>
+    <string name="name_dog">Name of the Pet</string>
+    <string name="name_breed">Name of the Breed</string>
+    <string name="name_location">Name of the Location</string>
+    <string name="plus_button">Adoption</string>
+    <string name="rating_Bars">Rating Bars</string>
+    <string name="text_field">Fill the form </string>
+
+    <string name="action_adoption_home">Adoption Home</string>
+    <string name="action_adoption_report">Report</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--nav icon and design-->
+    <string name="action_share">Share</string>
+    <string name="action_send">Send</string>
+    <string name="group_communicate">Communicate</string>
+
+    <string name="action_maps">Maps</string>
+
+
+    <!---->
+    <string name="nav_header_title">Adoption Centre</string>
+    <string name="nav_header_subtitle">voteforhomer@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+
+    ///about
+
+    <string name="action_about">About Us</string>
+    <string name="aboutus_title">Cooper for World champions 2022  !!</string>
+    <string name="aboutus_message">Hi, I\'m Cooper\n\nPlease vote for me.\n\n Please Please Please Please!! :( </string>
+
+
+
+
+    <string name="adoptionNotFound" tools:ignore="TypographyEllipsis">No Adoption Yet...\nGo Make a Adoption!</string>
+
+
+
+    <string name="adoptionError" tools:ignore="TypographyEllipsis">Error : Couldn\'t \'t \'t Make a Adoption...</string>
+
+
+
+
+    <string name="adoptionDetails">Adoption Details</string>
+    <string name="edit_nameDog">Name Dog :</string>
+    <string name="edit_dogBreed">Breed :</string>
+    <string name="edit_Location">Location :</string>
+    <string name="edit_ratingBar">Rating</string>
+    <string name="edit_update">update</string>
+    <string name="edit_delete">delete</string>
+
+
+
+
+    <!-- START Firebase Resources-->
+
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="send_link">Send Link</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="token_null">Token: null</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="emailpassword_title_text">Please Login Below</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="messageLoading"> Please Wait while the Donations are Loading... </string>
+
+</resources>

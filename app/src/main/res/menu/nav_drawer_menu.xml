@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/adoptionHomeFragment"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/action_adoption_home" />
+        <item
+            android:id="@+id/report_listFragment"
+            android:icon="@drawable/ic_baseline_view_list_24"
+            android:title="@string/action_adoption_report" />
+        <item
+            android:id="@+id/aboutUsFragment"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/action_about" />
+    </group>
+
+    <item android:title="@string/group_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="@string/action_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_baseline_send_24"
+                android:title="@string/action_send" />
+<!--            <item-->
+<!--                android:id="@+id/nav_about"-->
+<!--                android:icon="@drawable/ic_baseline_info_24"-->
+<!--                android:title="@string/action_about" />-->
+            <item
+                android:id="@+id/nav_maps"
+                android:icon="@drawable/ic_baseline_map_24"
+                android:title="@string/action_maps" />
+
+
+        </menu>
+    </item>
+
+    <item android:title="Access Control">
+        <menu>
+            <item
+                android:id="@+id/signout"
+                android:icon="@android:drawable/ic_menu_revert"
+                android:onClick="signOut"
+                android:title="@string/sign_out" />
+        </menu>
+    </item>
+
+</menu>

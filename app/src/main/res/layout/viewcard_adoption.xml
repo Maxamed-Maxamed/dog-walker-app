@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="adoption"
+            type="org.wit.dogadoptioncentre.models.AdoptionModel"/>
+    </data>
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:elevation="24dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="365dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="376dp"
+            android:layout_height="112dp"
+            android:layout_marginBottom="232dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/goldenpuppy"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <TextView
+            android:id="@+id/nameOfPet1"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="126dp"
+            android:layout_marginTop="132dp"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/name_dog"
+            android:text="@{adoption.dogName}"
+
+
+
+
+            />
+        <!--            android:text="@{Long.toString(adoption.id)}"-->
+        <TextView
+            android:id="@+id/nameOfBreed2"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="112dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/name_breed"
+            android:text="@{adoption.dogBreed}"
+            />
+
+
+        <TextView
+            android:id="@+id/nameOfLocation3"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="224dp"
+            android:layout_marginEnd="112dp"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{adoption.dogLocation}"
+            tools:text="@string/name_location" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginEnd="72dp"
+            android:contentDescription="@string/rating_Bars"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:rating="@{adoption.ratingbar}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+</layout>
