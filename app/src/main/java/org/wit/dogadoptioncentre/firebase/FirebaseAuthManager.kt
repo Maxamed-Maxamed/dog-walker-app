@@ -8,6 +8,7 @@ import timber.log.Timber
 
 class FirebaseAuthManager(application: Application) {
 
+    /* A private variable that is used to store the application context. */
     private var application: Application? = null
 
     var firebaseAuth: FirebaseAuth? = null
@@ -15,6 +16,7 @@ class FirebaseAuthManager(application: Application) {
     var loggedOut = MutableLiveData<Boolean>()
     var errorStatus = MutableLiveData<Boolean>()
 
+    /* Initialising the FirebaseAuthManager class. */
     init {
         this.application = application
         firebaseAuth = FirebaseAuth.getInstance()
@@ -26,6 +28,12 @@ class FirebaseAuthManager(application: Application) {
         }
     }
 
+    /**
+     * It logs in the user with the email and password provided.
+     *
+     * @param email The email address of the user.
+     * @param password String?
+     */
     /**
      * It logs in the user with the email and password provided.
      *

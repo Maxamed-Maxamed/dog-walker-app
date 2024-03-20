@@ -39,12 +39,14 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+    /* This is the code for the recycler view. */
     ): View? {
         _fragBinding = FragmentReportListBinding.inflate(inflater, container, false)
         val root = fragBinding.root
 
 //        loader = createLoader(requireActivity())
 
+        /* This is the code for the recycler view. */
         fragBinding.recyclerView.layoutManager = LinearLayoutManager(activity)
 
         activity?.title = getString(R.string.action_adoption_report)
@@ -61,6 +63,7 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
 //            hideLoader(loader)
             checkSwipeRefresh()
         })
+        /* This is the code for the floating action button. */
         val fab: FloatingActionButton = fragBinding.fab
         fab.setOnClickListener {
             val action = Report_listFragmentDirections.actionReportListFragmentToAdoptionHomeFragment()
@@ -68,6 +71,7 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
         }
 
 
+        /* This is the code for the swipe to delete function. */
         val swipeDeleteHandler = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = fragBinding.recyclerView.adapter as AdoptionAdapters
@@ -79,6 +83,7 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
 
             }
         }
+        /* This is the code for the swipe to delete function. */
         val itemTouchDeleteHelper = ItemTouchHelper(swipeDeleteHandler)
         itemTouchDeleteHelper.attachToRecyclerView(fragBinding.recyclerView)
 
@@ -98,6 +103,11 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
         return root
     }
 
+    /**
+     * The above function is used to render the data from the database to the recycler view.
+     *
+     * @param adoptionRender ArrayList<AdoptionModel>
+     */
     private fun render(adoptionRender: ArrayList<AdoptionModel>) {
         fragBinding.recyclerView.adapter = AdoptionAdapters(adoptionRender,this)
         if (adoptionRender.isEmpty()) {
@@ -179,12 +189,24 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
      * @see .onCreateOptionsMenu
      */
 
+    /**
+     * If the user clicks on an item in the menu, and that item has an associated action, then perform
+     * that action
+     *
+     * @param item The menu item that was selected.
+     * @return The return value is a boolean.
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return NavigationUI.onNavDestinationSelected(item,
             requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 
+    /**
+     * It navigates to the adoption detail fragment when the adoption is clicked.
+     *
+     * @param adoptions AdoptionModel - This is the adoption object that was clicked.
+     */
     override fun onAdoptionClick(adoptions: AdoptionModel) {
        val action = Report_listFragmentDirections.actionReportListFragmentToAdoptionDetailFragment(adoptions.id)
        findNavController().navigate(action)
@@ -192,6 +214,7 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
     }
 
 
+    /* This is the code for the swipe to refresh function. */
     fun setSwipeRefresh() {
         fragBinding.swiperefresh.setOnRefreshListener {
             fragBinding.swiperefresh.isRefreshing = true
@@ -201,6 +224,9 @@ class Report_listFragment : Fragment() , AdoptionClickListener {
         }
     }
 
+    /**
+     * It checks if the swipe refresh is refreshing and if it is, it sets it to false.
+     */
     fun checkSwipeRefresh() {
         if (fragBinding.swiperefresh.isRefreshing)
             fragBinding.swiperefresh.isRefreshing = false

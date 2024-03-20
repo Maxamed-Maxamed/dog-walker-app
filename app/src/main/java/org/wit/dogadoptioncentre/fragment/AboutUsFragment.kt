@@ -22,6 +22,14 @@ class AboutUsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    /**
+     * The `onCreate` function in Kotlin is used to initialize the activity and retrieve any saved
+     * instance state.
+     *
+     * @param savedInstanceState The `savedInstanceState` parameter is a `Bundle` object that contains
+     * the data that was saved in the `onSaveInstanceState` method. It can be used to restore the state
+     * of the activity or fragment when it is recreated.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

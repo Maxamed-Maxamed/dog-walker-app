@@ -9,6 +9,7 @@ import timber.log.Timber
 
 object FirebaseDBManager : AdoptionStore {
 
+    /* This is the database reference to the Firebase database. */
     var database: DatabaseReference = FirebaseDatabase.getInstance("https://dogadoption-1cdc3-default-rtdb.europe-west1.firebasedatabase.app/").getReference()
 
 
@@ -16,6 +17,12 @@ object FirebaseDBManager : AdoptionStore {
         TODO("Not yet implemented")
     }
 
+    /**
+     * We're getting the user's adoptions from the database and adding them to a local list
+     *
+     * @param userid The user's id
+     * @param adoptionsList MutableLiveData<List<AdoptionModel>>
+     */
     override fun findAll(userid: String, adoptionsList: MutableLiveData<List<AdoptionModel>>) {
 
         database.child("user-adoptions").child(userid)
@@ -39,6 +46,13 @@ object FirebaseDBManager : AdoptionStore {
             })
     }
 
+    /**
+     * It gets the adoption from the database.
+     *
+     * @param userid The user's id
+     * @param adoptionId The id of the adoption you want to get.
+     * @param adoptions MutableLiveData<AdoptionModel>
+     */
     override fun findById( userid: String,  adoptionId: String, adoptions: MutableLiveData<AdoptionModel>) {
 
         database.child("user-adoptions").child(userid)
@@ -50,6 +64,14 @@ object FirebaseDBManager : AdoptionStore {
             }
     }
 
+    /**
+     * We create a new adoption object, add the key to the object, convert the object to a map, and
+     * then add the map to the database
+     *
+     * @param firebaseUser MutableLiveData<FirebaseUser>
+     * @param adoptions AdoptionModel
+     * @return A MutableLiveData<List<AdoptionModel>>
+     */
     override fun create(firebaseUser: MutableLiveData<FirebaseUser>, adoptions: AdoptionModel) {
         Timber.i("Firebase DB Reference : $database")
 
@@ -69,6 +91,12 @@ object FirebaseDBManager : AdoptionStore {
         database.updateChildren(childAdd)
     }
 
+    /**
+     * This function deletes the adoption from the database
+     *
+     * @param userid The user's id
+     * @param adoptionsid The id of the adoption you want to delete.
+     */
     override fun delete(userid: String, adoptionsid: String) {
         val childDelete : MutableMap<String, Any?> = HashMap()
         childDelete["/adoptions/$adoptionsid"] = null
@@ -77,6 +105,14 @@ object FirebaseDBManager : AdoptionStore {
         database.updateChildren(childDelete)
     }
 
+    /**
+     * The function takes in a userid, adoptionsid, and adoptions object, and updates the adoptions and
+     * user-adoptions nodes in the database
+     *
+     * @param userid The userid of the user who is adopting the animal
+     * @param adoptionsid The unique ID of the adoption
+     * @param adoptions The name of the table in the database
+     */
     override fun update(userid: String, adoptionsid: String, adoptions: AdoptionModel) {
 
         val adoptionValues = adoptions.toMap()

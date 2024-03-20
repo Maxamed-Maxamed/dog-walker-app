@@ -16,14 +16,7 @@ class AdoptionViewModelContent: ViewModel() {
         get() = status
 
 
-//    fun addDonation(adoptions: AdoptionModel) {
-//        status.value = try {
-//            AdoptionManager.create(adoptions)
-//            true
-//        } catch (e: IllegalArgumentException) {
-//            false
-//        }
-//    }
+
 
     fun addAdoption(firebaseUser: MutableLiveData<FirebaseUser>,
                     adoptions: AdoptionModel) {

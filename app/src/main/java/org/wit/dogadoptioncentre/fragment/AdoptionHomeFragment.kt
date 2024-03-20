@@ -29,6 +29,12 @@ class AdoptionHomeFragment : Fragment() {
     private val loggedInViewModel : LoggedInViewModel by activityViewModels()
 
 
+    /**
+     * The function is called when the activity is created
+     *
+     * @param savedInstanceState If the fragment is being re-created from a previous saved state, this
+     * is the state.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         app = activity?.application as AdoptionXApp
@@ -36,9 +42,20 @@ class AdoptionHomeFragment : Fragment() {
 
     }
 
+    /**
+     * The onCreateView function that is called when the fragment is created.
+     *
+     * @param inflater The LayoutInflater object that can be used to inflate any views in the fragment,
+     * @param container The parent that this fragment's UI should be attached to. The fragment should
+     * not add the view itself, but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState A Bundle object containing the activity's previously saved state. If
+     * the activity has never existed before, the value of the Bundle object is null.
+     * @return The root view of the fragment.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+    /* This is the code that is used to create the view of the fragment. */
     ): View? {
         _fragBinding = FragmentAdoptionHomeBinding.inflate(inflater, container,false)
         val root = fragBinding.root
@@ -51,6 +68,12 @@ class AdoptionHomeFragment : Fragment() {
             return root;
     }
 
+    /**
+     /* It renders the result of the adoption process. */
+     * It renders the result of the adoption process.
+     *
+     * @param status Boolean
+     */
     private fun render(status : Boolean) {
         when (status ) {
             true -> {
@@ -64,16 +87,26 @@ class AdoptionHomeFragment : Fragment() {
     }
 
 
+    /**
+     * This function is used to set the onClickListener for the button in the fragment
+     *
+     * @param layout FragmentAdoptionHomeBinding
+     */
     fun setBtnListener(layout:FragmentAdoptionHomeBinding ){
 
+        /* Used to set the onClickListener for the button in the fragment. */
         layout.adoptionButton.setOnClickListener {
 
+            /* Getting the text from the text fields and assigning it to the variables. */
             adoption_models.dogName = fragBinding.nameOfPet1.text.toString()
             adoption_models.dogBreed = fragBinding.nameOfBreed2.text.toString()
             adoption_models.dogLocation = fragBinding.nameOfLocation3.text.toString()
             adoption_models.ratingbar = fragBinding.ratingBar.rating
 
 
+            /* This is a conditional statement that checks if the text fields are empty. If they are
+            empty, it will display a toast message. If they are not empty, it will add the adoption
+            to the database. */
             if (adoption_models.dogName.isEmpty()|| adoption_models.dogBreed.isEmpty() || adoption_models.dogLocation.isEmpty() || adoption_models.ratingbar.isInfinite()){
 
                 Toast.makeText(context, R.string.text_field, Toast.LENGTH_SHORT).show()
@@ -100,6 +133,7 @@ class AdoptionHomeFragment : Fragment() {
 
 
 
+    /* A static method that is used to create a new instance of the fragment. */
     companion object {
         @JvmStatic
         fun newInstance() =
@@ -108,10 +142,18 @@ class AdoptionHomeFragment : Fragment() {
             }
     }
 
+    /**
+     * It sets the binding variable to null.
+     */
     override fun onDestroyView() {
         super.onDestroyView()
         _fragBinding = null
     }
+    /**
+     * The function is called when the activity is resumed. It gets the reportViewModel from the
+     * ViewModelProvider, and then observes the observableAdoptionsList. When the list changes, the sum
+     * of the ids is calculated
+     */
     override fun onResume() {
         super.onResume()
 //        var total= app.adoptionStore.findAll().sumOf { it.id }

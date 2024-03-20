@@ -8,6 +8,12 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 
 
+/**
+ * It creates a loader.
+ *
+ * @param activity The activity that the loader will be displayed in.
+ * @return A function that takes an activity and returns an AlertDialog.
+ */
 fun createLoader(activity: FragmentActivity) : AlertDialog {
     val loaderBuilder = AlertDialog.Builder(activity)
         .setCancelable(true) // 'false' if you want user to wait
@@ -19,6 +25,12 @@ fun createLoader(activity: FragmentActivity) : AlertDialog {
     return loader
 }
 
+/**
+ * If the loader is not showing, set the title to the message and show the loader.
+ *
+ * @param loader The loader to show.
+ * @param message The message to be displayed in the loader.
+ */
 fun showLoader(loader: AlertDialog, message: String) {
     if (!loader.isShowing) {
         loader.setTitle(message)
@@ -26,15 +38,25 @@ fun showLoader(loader: AlertDialog, message: String) {
     }
 }
 
+/**
+ * It hides the loader.
+ *
+ * @param loader AlertDialog
+ */
 fun hideLoader(loader: AlertDialog) {
     if (loader.isShowing)
         loader.dismiss()
 }
 
+/**
+ * This function takes in an activity and displays a toast message to the user.
+ *
+ * @param activity The activity that is calling the function.
+ */
 fun serviceUnavailableMessage(activity: FragmentActivity) {
     Toast.makeText(
         activity,
-        "Donation Service Unavailable. Try again later",
+        "Adoption Service Unavailable. Try again later",
         Toast.LENGTH_LONG
     ).show()
 }
@@ -42,7 +64,7 @@ fun serviceUnavailableMessage(activity: FragmentActivity) {
 fun serviceAvailableMessage(activity: FragmentActivity) {
     Toast.makeText(
         activity,
-        "Donation Contacted Successfully",
+        "Adoption Contacted Successfully",
         Toast.LENGTH_LONG
     ).show()
 }

@@ -22,6 +22,7 @@ import org.wit.dogadoptioncentre.ui.auth.Login
 
 
 class AdoptionHome : AppCompatActivity() {
+
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var homeBinding : HomePageBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -29,6 +30,11 @@ class AdoptionHome : AppCompatActivity() {
     private lateinit var loggedInViewModel : LoggedInViewModel
 
 
+    /**
+     * The function onCreate() is called when the activity is created
+     *
+     * @param savedInstanceState The saved state of the activity, if it is being re-created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
    /*     setContentView(R.layout.content_adoption_home)*/
@@ -66,6 +72,12 @@ class AdoptionHome : AppCompatActivity() {
 
 
 
+    /**
+     * The function is called when the activity is started. It creates a new instance of the
+     * LoggedInViewModel class and observes the liveFirebaseUser variable. If the user is logged in,
+     * the updateNavHeader function is called. If the user is logged out, the user is redirected to the
+     * Login activity
+     */
     public override fun onStart() {
         super.onStart()
         loggedInViewModel = ViewModelProvider(this).get(LoggedInViewModel::class.java)
@@ -85,12 +97,22 @@ class AdoptionHome : AppCompatActivity() {
     }
 
 
+    /**
+     * It updates the navigation header with the current user's email.
+     *
+     * @param currentUser FirebaseUser - The current user that is logged in.
+     */
     private fun updateNavHeader(currentUser: FirebaseUser) {
         var headerView = homeBinding.navView.getHeaderView(0)
         navHeaderBinding = NavHeaderBinding.bind(headerView)
         navHeaderBinding.navHeaderEmail.text = currentUser.email
     }
 
+    /**
+     * It logs the user out and redirects them to the login page.
+     *
+     * @param item MenuItem - The menu item that was clicked.
+     */
     fun signOut(item: MenuItem) {
         loggedInViewModel.logOut()
         val intent = Intent(this, Login::class.java)
@@ -99,6 +121,11 @@ class AdoptionHome : AppCompatActivity() {
     }
 
 
+    /**
+     * If the user presses the Up button, navigate up in the navigation hierarchy
+     *
+     * @return The return value is a boolean.
+     */
     override fun onSupportNavigateUp(): Boolean {
 //        val navController = findNavController(R.id.nav_host_fragment)
 //        return NavigationUI.navigateUp(navController, drawerLayout)

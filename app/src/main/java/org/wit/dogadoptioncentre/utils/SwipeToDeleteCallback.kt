@@ -16,6 +16,13 @@ abstract class SwipeToDeleteCallback(context: Context) : ItemTouchHelper.SimpleC
     private val backgroundColor = Color.parseColor("#f44336")
     private val clearPaint = Paint().apply { xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR) }
 
+    /**
+     * If you want to disable swiping for a specific item, return 0 from this function
+     *
+     * @param recyclerView The RecyclerView to which the ItemTouchHelper is attached to.
+     * @param viewHolder The ViewHolder that is being dragged by the user.
+     * @return The return value is a bit mask of the direction of the swipe.
+     */
     override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
         /**
          * To disable "swipe" for specific item return 0 here.
@@ -27,6 +34,14 @@ abstract class SwipeToDeleteCallback(context: Context) : ItemTouchHelper.SimpleC
         return super.getMovementFlags(recyclerView, viewHolder)
     }
 
+    /**
+     * > This function is called when the user drags an item from one position to another
+     *
+     * @param recyclerView The RecyclerView to which the ViewHolder belongs.
+     * @param viewHolder The view holder that is being dragged.
+     * @param target The target view holder you are switching the original one with.
+     * @return Boolean
+     */
     override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
         return false
     }

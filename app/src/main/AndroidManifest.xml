@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.wit.dogadoptioncentre">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:name=".main.AdoptionXApp"
@@ -28,6 +27,7 @@
         </activity>
         <activity android:name=".activities.AdoptionHome">
         </activity>
+
     </application>
 
 </manifest>

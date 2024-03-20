@@ -39,7 +39,7 @@ android {
         viewBinding true
         dataBinding true
     }
-
+    namespace 'org.wit.dogadoptioncentre'
 
 
 }
